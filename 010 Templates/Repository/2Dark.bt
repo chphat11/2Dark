@@ -1,0 +1,54 @@
+//------------------------------------------------
+//--- 010 Editor Binary Template
+//
+//      File: 2Dark.bt
+//    Author: 135
+//   Version: 1.0
+//   Purpose: Parse BIGFILE archive files.
+//  Category: Archive
+// File Mask: *.bigfile
+//  ID Bytes: 10 00 00 00 // to decimal: 16
+//   History:
+//   1.0   SweetScape: Initial release
+//------------------------------------------------
+
+LittleEndian();
+local uint i, pos, indexoffset, dataoffset;
+
+struct FILE {
+	struct HEADER {
+		uint ver;
+		if (ver == 16)
+		{
+			uint numentries;
+			uint dataoffset;
+			uint unknow;
+		}
+	}header <bgcolor=cLtGreen>;
+	
+	struct ENTRY {
+		if (header.ver == 16)
+		{
+			pos = FTell();
+			indexoffset = pos + header.numentries * 8;
+			dataoffset = header.dataoffset;
+			for (i = 0; i < header.numentries; i++)
+			{
+				uint entrynamelength;
+				uint entrysize;
+				pos = FTell();
+				FSeek(indexoffset);
+				struct ENTRYNAME {
+					char entryname[entrynamelength];
+				}entryname;
+				indexoffset += entrynamelength;
+				FSeek(dataoffset);
+				struct DATA {
+					uchar data[entrysize];
+				}data <bgcolor=cLtGray>;
+				dataoffset += entrysize;
+				FSeek(pos);
+			}
+		}
+	}entry <bgcolor=cLtBlue>;
+}file;

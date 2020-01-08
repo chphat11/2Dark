@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2Dark", "2Dark\2Dark.csproj", "{8061AE41-5C58-4787-A2FC-01F6956A6057}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "135.2Dark.Tools", "135.2Dark.Tools\135.2Dark.Tools.csproj", "{DFBDE640-6628-464A-A167-4FB8ED40ABAE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8061AE41-5C58-4787-A2FC-01F6956A6057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8061AE41-5C58-4787-A2FC-01F6956A6057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8061AE41-5C58-4787-A2FC-01F6956A6057}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8061AE41-5C58-4787-A2FC-01F6956A6057}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFBDE640-6628-464A-A167-4FB8ED40ABAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFBDE640-6628-464A-A167-4FB8ED40ABAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFBDE640-6628-464A-A167-4FB8ED40ABAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFBDE640-6628-464A-A167-4FB8ED40ABAE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
