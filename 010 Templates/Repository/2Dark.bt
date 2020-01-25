@@ -26,29 +26,25 @@ struct FILE {
 		}
 	}header <bgcolor=cLtGreen>;
 	
-	struct ENTRY {
-		if (header.ver == 16)
+	if (header.ver == 16)
+	{
+		pos = FTell();
+		indexoffset = pos + header.numentries * 8;
+		dataoffset = header.dataoffset;
+		for (i = 0; i < header.numentries; i++)
 		{
-			pos = FTell();
-			indexoffset = pos + header.numentries * 8;
-			dataoffset = header.dataoffset;
-			for (i = 0; i < header.numentries; i++)
-			{
+			struct ENTRY {
 				uint entrynamelength;
 				uint entrysize;
 				pos = FTell();
 				FSeek(indexoffset);
-				struct ENTRYNAME {
-					char entryname[entrynamelength];
-				}entryname;
+				char entryname[entrynamelength];
 				indexoffset += entrynamelength;
 				FSeek(dataoffset);
-				struct DATA {
-					uchar data[entrysize];
-				}data <bgcolor=cLtGray>;
+				uchar data[entrysize] <bgcolor=cLtGray>;
 				dataoffset += entrysize;
 				FSeek(pos);
-			}
+			}entry <bgcolor=cLtBlue>;
 		}
-	}entry <bgcolor=cLtBlue>;
+	}
 }file;
